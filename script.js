@@ -16,19 +16,26 @@ let PetArray = [
 
 //function to add new pets to the system
 function PetRegister() {
+    // ask for a  pet to add the array by asking for the pets info
     let nameAdd = prompt('What is the name of the pet you want to add')
     let ageAdd = prompt('What is the age of the pet you want to add')
     let speciesAdd = prompt('What is the species of the pet you want to add')
 
-    let pet = {
-        name: nameAdd,
-        age: ageAdd,
-        species: speciesAdd,
+    // check input if valid
+    if (nameAdd != '' && age > 0 && age < 150 && speciesAdd != '') {
+        //get the pets info
+        let pet = {
+            name: nameAdd,
+            age: ageAdd,
+            species: speciesAdd,
 
+        }
+        //add pets info to the array
+        PetArray.push(pet)
     }
-    PetArray.push(pet)
-
-
+    else {
+        alert('The details inputted are not valid')
+    }
 }
 
 //Function to see what pets are at the spac
@@ -59,15 +66,16 @@ function SearchForPet() {
     let searchResult = false
 
     for (let searchPet of PetArray) {
-        if (searchPet == (searchPet)) {
+        if (searchPet == (PetArray)) {
             searchResult = true
         }
     }
 
-    if (searchResult) {
+    if (searchResult = true) {
         alert(searchPet + 'is here')
     }
-    else {
+
+    if (searchResult = false) {
         alert(searchPet + 'is not here')
     }
     alert(searchPet + ' found: ' + searchResult)
